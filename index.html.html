@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải mã Mặt nạ số & Chỉ số Netiquette | Unmask</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent: #f59e0b;
+            --border: #334155;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 700px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            padding: 30px;
+            border: 1px solid var(--border);
+        }
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .question-box {
+            margin-bottom: 25px;
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .question-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #e2e8f0;
+            font-size: 16px;
+        }
+        .options label {
+            display: block;
+            background: #1e293b;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        .options label:hover {
+            background: #334155;
+            border-color: var(--primary);
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+        #result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #0f172a;
+            border-radius: 12px;
+            border: 2px dashed var(--accent);
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .result-title {
+            color: var(--accent);
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .result-score {
+            text-align: center;
+            font-size: 15px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .result-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        .handbook-box {
+            margin-top: 20px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid #38bdf8;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .handbook-box p {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        .handbook-box a {
+            color: #38bdf8;
+            font-weight: bold;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+        .handbook-box a:hover {
+            color: #7dd3fc;
+        }
+        .restart-btn {
+            display: block;
+            margin: 20px auto 0 auto;
+            background: #334155;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .restart-btn:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔮 GIẢI MÃ MẶT NẠ SỐ & CHỈ SỐ NETIQUETTE</h1>
+        <div class="subtitle">"Đằng sau mỗi màn hình là một con người thật với những cảm xúc rất thật." — Unmask [cite: 1]</div>
+        
+        <form id="quizForm">
+            <!-- Câu 1 -->
+            <div class="question-box">
+                <div class="question-title">Câu 1: Khi lướt mạng và thấy một bài đăng gây tranh cãi dữ dội, phản ứng đầu tiên của bạn là gì?</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="1" required> A. Lướt qua nhanh, không quan tâm vì chuyện thiên hạ, mình ngoài cuộc.</label>
+                    <label><input type="radio" name="q1" value="0"> B. Hùa theo số đông để để lại bình luận châm chọc cho vui miệng, dù sao không ai biết mình là ai.</label>
+                    <label><input type="radio" name="q1" value="3"> C. Đọc để hiểu đa chiều, tự nhủ không nên phán xét vội vàng khi chưa rõ sự tình.</label>
+                    <label><input type="radio" name="q1" value="5"> D. Cảm thấy bất bình thay cho nạn nhân và suy nghĩ xem mình có thể đóng góp góc nhìn gì để xoa dịu.</label>
+                </div>
+            </div>
+
+            <!-- Câu 2 -->
+            <div class="question-box">
+                <div class="question-title">Câu 2: Nếu bạn vô tình nhận được một bình luận mỉa mai, công kích trực diện vào bài viết của mình, bạn sẽ xử lý thế nào?</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="0" required> A. Nổi giận, dùng tài khoản phụ hoặc ẩn danh để đôi co, cãi tay đôi cho bằng được.</label>
+                    <label><input type="radio" name="q2" value="2"> B. Xóa bình luận hoặc chặn ngay lập tức, cảm thấy bức xúc và mất ngủ cả buổi.</label>
+                    <label><input type="radio" name="q2" value="4"> C. Hít một hơi thật sâu, tự nhắc bản thân rằng "đằng sau màn hình họ có thể đang áp lực" rồi phớt lờ.</label>
+                    <label><input type="radio" name="q2" value="5"> D. Nhắn tin riêng nhẹ nhàng hoặc phản hồi lịch sự để làm rõ vấn đề với mong muốn thấu hiểu.</label>
+                </div>
+            </div>
+
+            <!-- Câu 3 -->
+            <div class="question-box">
+                <div class="question-title">Câu 3: Khi sử dụng một tài khoản phụ / ẩn danh (không để tên/avatar thật) trên mạng xã hội, hành vi của bạn thay đổi ra sao?</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="0" required> A. Thay đổi hoàn toàn! Thấy tự do hơn, thích nói gì thì nói, chê bai ai cũng được không ai tra ra.</label>
+                    <label><input type="radio" name="q3" value="2"> B. Thỉnh thoảng mạnh dạn hơn chút khi bình luận dạo, nhưng không đến mức xúc phạm ai.</label>
+                    <label><input type="radio" name="q3" value="4"> C. Vẫn giữ nguyên quy chuẩn đạo đức như tài khoản chính, vì lời trên mạng cũng là lời thật ngoài đời.</label>
+                    <label><input type="radio" name="q3" value="5"> D. Xem đó là "không gian an toàn" để tập lắng nghe góc khuất và chia sẻ chân thành.</label>
+                </div>
+            </div>
+
+            <!-- Câu 4 -->
+            <div class="question-box">
+                <div class="question-title">Câu 4: Bạn chứng kiến một người quen trên mạng đang bị "ném đá hội đồng" (cyberbullying) vô căn cứ. Bạn sẽ làm gì?</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="0" required> A. Xem như phim hay để hóng biến, thậm chí thả "haha" vào các bài dìm hàng.</label>
+                    <label><input type="radio" name="q4" value="2"> B. Im lặng, sợ nếu bênh vực thì mình sẽ trở thành mục tiêu tiếp theo bị tấn công.</label>
+                    <label><input type="radio" name="q4" value="4"> C. Nhắn tin riêng động viên nạn nhân và tránh xa drama đó.</label>
+                    <label><input type="radio" name="q4" value="5"> D. Dũng cảm lên tiếng bảo vệ sự thật, từ bỏ vị trí "khán giả vô danh" để lan tỏa năng lượng đồng cảm.</label>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">✨ Lật Bài Tarot - Xem Kết Quả Ngay ✨</button>
+            </div>
+        </form>
+
+        <div id="result">
+            <div class="result-title" id="resultTitle"></div>
+            <div class="result-score" id="resultScore"></div>
+            <div class="result-desc" id="resultDesc"></div>
+            
+            <div class="handbook-box">
+                <p>📖 Nếu bạn chưa biết cách ứng xử văn minh trên không gian mạng, hãy truy cập vào đường cẩm nang ứng xử văn minh của nhóm chúng tôi:</p>
+                <a href="https://heyzine.com/flip-book/893ee0719a.html" target="_blank">https://heyzine.com/flip-book/893ee0719a.html</a>
+            </div>
+
+            <button class="restart-btn" onclick="resetQuiz()">🔄 Làm Lại Bài Test</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let score = 0;
+            score += parseInt(document.querySelector('input[name="q1"]:checked').value);
+            score += parseInt(document.querySelector('input[name="q2"]:checked').value);
+            score += parseInt(document.querySelector('input[name="q3"]:checked').value);
+            score += parseInt(document.querySelector('input[name="q4"]:checked').value);
+
+            let title = "";
+            let desc = "";
+
+            if (score <= 6) {
+                title = "🔴 MẶT NẠ GAI GÓC (Hiệp sĩ bóng đêm - Dark Cyber)";
+                desc = "Bạn đang lạm dụng quá đà sự ẩn danh trên không gian mạng để trút bỏ áp lực thực tế hoặc tìm kiếm sự kích thích nhất thời. Bạn đôi khi quên mất rằng sau mỗi màn hình là một con người bằng xương bằng thịt có cảm xúc thật.<br><br><strong>💡 Lời khuyên từ Unmask:</strong> Đã đến lúc bạn cần bỏ mặt nạ tiêu cực! Hãy nhớ nguyên tắc Netiquette: <em>Đừng viết lên mạng những điều bạn không dám nói ngoài đời.</em>";
+            } else if (score <= 14) {
+                title = "🟡 MẶT NẠ TÀNG HÌNH (Khán giả vô danh thận trọng)";
+                desc = "Bạn thuộc nhóm an toàn. Bạn không chủ động gây tổn thương ai, nhưng cũng chọn đứng ngoài cuộc, giữ im lặng khi thấy điều bất công hoặc tiêu cực vì sợ rắc rối.<br><br><strong>💡 Lời khuyên từ Unmask:</strong> Bạn đang ở vị trí 'khán giả vô danh'. Sự im lặng đôi khi đồng lõa với cái xấu. Hãy mạnh dạn chuyển hóa thành người trong cuộc, bật năng lực đồng cảm mỗi ngày!";
+            } else {
+                title = "🟢 GƯƠNG MẶT THẬT (Đại sứ Đồng cảm số - Digital Empathy Guardian)";
+                desc = "Chúc mừng bạn! Chỉ số ứng xử văn minh số (Netiquette) của bạn đang ở mức tuyệt vời. Bạn nhận thức rõ giá trị kết nối chân thật, biết cách bảo vệ không gian mạng an toàn, từ bỏ hoàn toàn các lớp mặt nạ độc hại.<br><br><strong>💡 Lời khuyên từ Unmask:</strong> Bạn chính là hạt nhân lan tỏa Unmask lý tưởng! Hãy tiếp tục truyền cảm hứng tháo mặt nạ nick ảo để tỏa sáng là chính mình!";
+            }
+
+            document.getElementById('resultTitle').innerHTML = title;
+            document.getElementById('resultScore').innerHTML = "Tổng điểm của bạn: " + score + " / 20 điểm";
+            document.getElementById('resultDesc').innerHTML = desc;
+            
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        function resetQuiz() {
+            document.getElementById('quizForm').reset();
+            document.getElementById('quizForm').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
